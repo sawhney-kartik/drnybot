@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Portal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function toggleAnswer(answer_id) {
+            var answer_content = $('#answer-' + answer_id + ' .answer-content');
+            var toggle_button = $('#answer-' + answer_id + ' .toggle-answer');
+
+            if (answer_content.is(':visible')) {
+                answer_content.hide();
+                toggle_button.text('Show Answer');
+            } else {
+                answer_content.show();
+                toggle_button.text('Hide Answer');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Admin Portal</h1>
+    <table border="1">
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.question}}</td>
+            <td>{{ item.answer|safe }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
