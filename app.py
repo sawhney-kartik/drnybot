@@ -4,11 +4,11 @@ import requests
 import openai
 from bs4 import BeautifulSoup
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import random
 import string
 import time
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
